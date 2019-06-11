@@ -1,5 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Todo} from '../interface';
+import {Router, ActivatedRoute} from '@angular/router';
+
 
 interface PrivateTodo extends Todo {
   // ?可选字段
@@ -13,23 +15,19 @@ interface PrivateTodo extends Todo {
 })
 export class TodoListComponent implements OnInit {
 
-  todos: PrivateTodo[] = [
-    {id: 999, description: 'For test purpose', category: 1, content: 'test1'},
-    {id: 998, description: ' uiouo', category: 2, content: 'test2'},
-    {id: 997, description: 'For test purpose uioo', category: 3, content: 'test3'},
-  ];
+  @Input()
+  todos: PrivateTodo[];
+
+  @Output()
+  delete: EventEmitter<number[]> = new EventEmitter<number[]>();
 
   selectAll = false;
 
-  constructor() {
+  constructor(private router: Router, private route: ActivatedRoute) {
+
   }
 
   ngOnInit() {
-  }
-
-  delete(ids: number[]) {
-    //
-    this.todos = this.todos.filter(item => ids.indexOf(item.id) === -1);
   }
 
   toggleAll() {
@@ -43,7 +41,13 @@ export class TodoListComponent implements OnInit {
 
   deleteSelected() {
     const ids = this.todos.filter(item => item.selected).map(item => item.id);
-    this.delete(ids);
+    this.delete.next(ids);
+  }
+
+  navigateTo(todo: PrivateTodo, event: MouseEvent) {
+    if (event.target instanceof HTMLTableCellElement) {
+      this.router.navigate([todo.id], {relativeTo: this.route});
+    }
   }
 
 }

@@ -10,6 +10,7 @@ import {RouterModule} from '@angular/router';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {FormsModule} from '@angular/forms';
+import { DetailComponent } from './detail/detail.component';
 // 懒加载AboutComponent
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule} from '@angular/forms';
     TodoComponent,
     InlineComponent,
     CreateTodoComponent,
-    TodoListComponent
+    TodoListComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
