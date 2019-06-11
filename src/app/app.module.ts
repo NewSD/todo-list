@@ -7,13 +7,17 @@ import { TodoComponent } from './todo/todo.component';
 import { InlineComponent } from './inline/inline.component';
 import { LayoutModule} from './layout/layout.module';
 import {RouterModule} from '@angular/router';
+import { CreateTodoComponent } from './create-todo/create-todo.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
 // 懒加载AboutComponent
 @NgModule({
   declarations: [
     AppComponent,
     TodoComponent,
-    InlineComponent
+    InlineComponent,
+    CreateTodoComponent,
+    TodoListComponent
   ],
   imports: [
     BrowserModule,
