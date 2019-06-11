@@ -13,7 +13,7 @@ export class TodoListComponent implements OnInit {
     {id: 997, description: 'For test purpose uioo', category: 3, content: 'test3'},
   ];
 
-  selectAll = true;
+  selectAll = false;
 
   constructor() {
   }
@@ -27,6 +27,11 @@ export class TodoListComponent implements OnInit {
 
   toggleAll() {
     console.log(this.selectAll);
+    this.todos.forEach(item => item.selected = this.selectAll);
+  }
+
+  check() {
+    this.selectAll = this.todos.every(item => item.selected);
   }
 
 }
