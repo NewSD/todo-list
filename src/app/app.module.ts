@@ -11,6 +11,7 @@ import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import {FormsModule} from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
+import {TodoserviceService} from './provider/todoservice.service';
 // 懒加载AboutComponent
 @NgModule({
   declarations: [
@@ -26,9 +27,13 @@ import { DetailComponent } from './detail/detail.component';
     AppRoutingModule,
     LayoutModule,
     RouterModule,
-    FormsModule
+    FormsModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    TodoserviceService,
+  ],
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule { }
