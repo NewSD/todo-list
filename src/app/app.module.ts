@@ -9,7 +9,7 @@ import { LayoutModule} from './layout/layout.module';
 import {RouterModule} from '@angular/router';
 import { CreateTodoComponent } from './create-todo/create-todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-
+import {FormsModule} from '@angular/forms';
 // 懒加载AboutComponent
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

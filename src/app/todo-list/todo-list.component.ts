@@ -13,6 +13,8 @@ export class TodoListComponent implements OnInit {
     {id: 997, description: 'For test purpose uioo', category: 3, content: 'test3'},
   ];
 
+  selectAll = true;
+
   constructor() {
   }
 
@@ -21,6 +23,10 @@ export class TodoListComponent implements OnInit {
 
   delete(ids) {
     this.todos = this.todos.filter(item => ids.indexOf(item.id) === -1);
+  }
+
+  toggleAll() {
+    console.log(this.selectAll);
   }
 
 }

@@ -2,7 +2,7 @@
   <thead>
   <tr>
     <th>
-      <input type="checkbox">
+      <input type="checkbox" [(ngModel)]="selectAll" (ngModelChange)="toggleAll()">
     </th>
     <th>Description</th>
     <th>Category</th>
