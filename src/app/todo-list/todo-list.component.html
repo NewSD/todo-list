@@ -17,7 +17,7 @@
     <td>{{item.description}}</td>
     <td>{{item.category}}</td>
     <td>
-      <a>Delete</a>
+      <a (click)="delete([item.id])">Delete</a>
     </td>
   </tr>
   </tbody>
