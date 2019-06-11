@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AboutComponent } from './about.component';
+import {AboutRoutingModule} from './about.routing.module';
 // 装饰器
 // import { Injectable,Inject} from '@angular/core';
 
@@ -8,7 +9,8 @@ import { AboutComponent } from './about.component';
 @NgModule({
   declarations: [ AboutComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    AboutRoutingModule
   ],
   exports: [
     AboutComponent,
