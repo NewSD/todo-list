@@ -34,4 +34,9 @@ export class TodoListComponent implements OnInit {
     this.selectAll = this.todos.every(item => item.selected);
   }
 
+  deleteSelected() {
+    const ids = this.todos.filter(item => item.selected).map(item => item.id);
+    this.delete(ids);
+  }
+
 }
