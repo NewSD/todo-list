@@ -4,4 +4,5 @@
   <li><strong>Content:</strong><span>{{todo.content}}</span></li>
 </ul>
 
-<button (click)="goBack()">Back</button>
+<!--<button (click)="goBack()">Back</button>-->
+<app-btn [text]="'Back'" (click)="goBack($event)"></app-btn>
