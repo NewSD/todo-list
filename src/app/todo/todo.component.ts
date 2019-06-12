@@ -9,12 +9,7 @@ import {TodoserviceService} from '../provider/todoservice.service';
 })
 export class TodoComponent implements OnInit {
 
-  todoList: Todo[] ;
-  todoList2: Todo[] = [
-    {id: 111, description: 'one', category: 0, content: 'test1'},
-    {id: 222, description: 'two', category: 1, content: 'test2'},
-    {id: 333, description: 'three', category: 2, content: 'test3'},
-  ];
+  todoList: Todo[];
 
   constructor(private todoService: TodoserviceService) {
 
@@ -22,10 +17,14 @@ export class TodoComponent implements OnInit {
   }
 
   ngOnInit() {
-   this.todoList = this.todoService.getTodos();
+    this.todoList = this.todoService.getTodos();
   }
 
   delete(ids: number[]) {
     this.todoList = this.todoService.delete(ids);
+  }
+
+  add(data: Partial<Todo>) {
+    this.todoList = this.todoService.addTodo(data);
   }
 }
