@@ -12,6 +12,8 @@ import { TodoListComponent } from './todo-list/todo-list.component';
 import {FormsModule} from '@angular/forms';
 import { DetailComponent } from './detail/detail.component';
 import {TodoserviceService} from './provider/todoservice.service';
+import {CategoryPipe} from './pipes/category.pipe';
+
 // 懒加载AboutComponent
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import {TodoserviceService} from './provider/todoservice.service';
     InlineComponent,
     CreateTodoComponent,
     TodoListComponent,
-    DetailComponent
+    DetailComponent,
+    CategoryPipe
   ],
   imports: [
     BrowserModule,
