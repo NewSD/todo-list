@@ -11,9 +11,9 @@ export class TodoComponent implements OnInit {
 
   todoList: Todo[] ;
   todoList2: Todo[] = [
-    {id: 111, description: 'one', category: 1, content: 'test1'},
-    {id: 222, description: 'two', category: 2, content: 'test2'},
-    {id: 333, description: 'three', category: 3, content: 'test3'},
+    {id: 111, description: 'one', category: 0, content: 'test1'},
+    {id: 222, description: 'two', category: 1, content: 'test2'},
+    {id: 333, description: 'three', category: 2, content: 'test3'},
   ];
 
   constructor(private todoService: TodoserviceService) {

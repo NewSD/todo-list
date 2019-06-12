@@ -6,9 +6,9 @@ import {Todo} from '../interface';
 })
 export class TodoserviceService {
   private data: Todo[] = [
-    {id: 999, description: 'For ', category: 1, content: 'test1'},
-    {id: 998, description: 'test', category: 2, content: 'test2'},
-    {id: 997, description: 'purpose ', category: 3, content: 'test3'},
+    {id: 999, description: 'For ', category: 0, content: 'test1'},
+    {id: 998, description: 'test', category: 1, content: 'test2'},
+    {id: 997, description: 'purpose ', category: 2, content: 'test3'},
   ];
 
   constructor() {
