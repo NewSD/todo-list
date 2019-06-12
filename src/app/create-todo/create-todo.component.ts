@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormGroup, FormBuilder, AbstractControl} from '@angular/forms';
+import {FormGroup, FormBuilder, AbstractControl, Validators} from '@angular/forms';
 import {Category as Cat} from '../interface';
 
 interface Category {
@@ -27,13 +27,13 @@ export class CreateTodoComponent implements OnInit {
 
   ngOnInit() {
     this.form = this.fb.group({
-      description: '',
-      category: '',
+      description: ['', [Validators.required, Validators.maxLength(15)]],
+      category: ['', Validators.required],
       content: ''
     });
   }
 
-  submit(){
+  submit() {
     console.log(this.form.value);
   }
 
